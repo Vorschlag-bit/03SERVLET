@@ -9,7 +9,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
-import java.util.logging.Handler;
 
 @WebServlet("/showErrorPage")
 public class ExceptionHandlerServlet extends HttpServlet {
@@ -19,13 +18,13 @@ public class ExceptionHandlerServlet extends HttpServlet {
         while (attrNames.hasMoreElements()) {
             System.out.println(attrNames.nextElement());
         }
-        int statusCdoe = (int) req.getAttribute("jakarta.servlet.error.status_code");
+        int statusCode = (int) req.getAttribute("jakarta.servlet.error.status_code");
         String message = (String) req.getAttribute("jakarta.servlet.error.message");
-        String serviceName = (String)req.getAttribute("jakarta.servlet.error.service_name");
+        String serviceName = (String)req.getAttribute("jakarta.servlet.error.servlet_name");
 
         StringBuilder errorPage = new StringBuilder();
         errorPage.append("<h1 align=\"center\">")
-                .append(statusCdoe)
+                .append(statusCode)
                 .append(message)
                 .append("-")
                 .append("<br>\n")

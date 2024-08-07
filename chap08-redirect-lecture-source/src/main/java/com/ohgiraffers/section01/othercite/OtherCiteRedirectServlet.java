@@ -1,4 +1,4 @@
-package com.ohgiraffers.section01.exception;
+package com.ohgiraffers.section01.othercite;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,10 +8,12 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet("/show500error")
-public class Show500Exception extends HttpServlet {
+@WebServlet("/othercite")
+public class OtherCiteRedirectServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendError(500," 에러는 무조건 내 잘못이다... 미안하다");
+        System.out.println("get 요청을 받으면 naver로 redirect");
+
+        resp.sendRedirect("http://www.naver.com/board/1?content=abc");
     }
 }
