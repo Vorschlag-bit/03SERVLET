@@ -26,6 +26,6 @@ public class RegistMemberServlet extends HttpServlet {
         System.out.println("비밀번호가 pass04인지 확인: "
                 + passwordEncoder.matches("pass04", password));
         System.out.println("비밀번호가 pass44인지 확인: "
-                + passwordEncoder.matches("$2a$10$jpx8To3UAZEWoQXDbFPK4.HIoGoR5c4QglreUVDm5Ic0dZ0rgmQ9O", password));
+                + passwordEncoder.matches("pass01", password));
     }
 }
