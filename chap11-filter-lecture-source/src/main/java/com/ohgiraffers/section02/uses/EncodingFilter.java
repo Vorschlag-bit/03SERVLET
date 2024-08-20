@@ -17,7 +17,7 @@ public class EncodingFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-
+        System.out.println("순서 확인용 출력");
         // encoding Filter 예제클라스
         /* 설명. 우린 톰캣 10버전인데 톰캣 10버전 미만일 경우 post 요청에 대해 인코딩 설정을 해 주어야 한다. */
         /* 설명. 필터를 활용해 request 객체에 인코딩 설정을 적용하고(전처리) 다음 필터나 서블릿으로 넘겨준다. */
